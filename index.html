@@ -96,14 +96,14 @@
     </style>
 
     <script>
-      window.initFunction = async function() {
+      function init() {
         webApp = window.Telegram.WebApp;
           if (webApp != null) webApp.expand();
       });
     </script>
     
   </head>
-  <body>
+  <body onload="init()">
     <div class="horizontal-block">
       <button class="back-button">←</button>
       <div class="title-label">Your Title</div>
