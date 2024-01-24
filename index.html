@@ -26,11 +26,67 @@
         color: white;
         font-size: 16px;
         cursor: pointer;
+        transition: transform 0.3s ease-in-out;
       }
   
       .title-label {
         flex-grow: 1;
       }
+      
+      .container {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 72px);
+        background-color: #999;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 108px);
+        gap: 4px;
+        padding: 16px;
+        justify-content: center;
+        background-color: #aaa;
+      }
+      
+      .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .back-button:hover,
+      .menu-button:hover,
+      .card:hover {
+      	transform: scale(1.05);
+      }
+      
+      .userpic {
+      	width: 100px;
+        height: 100px;
+      }
+  
+      .username {
+        flex-grow: 1;
+        font-size: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0px 2px;
+      }
+  
+      .remark-label {
+        flex-grow: 1;
+        font-size: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0px 2px;
+      }
+      
     </style>
   </head>
   <body>
@@ -38,6 +94,40 @@
       <button class="back-button">←</button>
       <div class="title-label">Your Title</div>
       <button class="menu-button">≡</button>
+    </div>
+    <div class="container">
+    	<div class="grid">
+          <div class="card">
+          	<img class="userpic" src=""/>
+            <h2 class="username">Елена Громова</h2>
+            <h3 class="remark-label">пусечка</h3>
+            <p>This is a sample card.</p>
+          </div>
+          <div class="card">
+          	<img class="userpic" src=""/>
+            <h2 class="username">Кирилл Егоров</h2>
+            <h3 class="remark-label">хуесос</h3>
+            <p>This is another card.</p>
+          </div>
+          <div class="card">
+          	<img class="userpic" src=""/>
+            <h2 class="username">Михаил Михайлов</h2>
+            <h3 class="remark-label">баба-пидор</h3>
+            <p>This is a third card.</p>
+          </div>
+          <div class="card">
+          	<img class="userpic" src=""/>
+            <h2 class="username">Игорь Сидельников</h2>
+            <h3 class="remark-label">скуф</h3>
+            <p>This is card number 4.</p>
+          </div>
+          <div class="card">
+          	<img class="userpic" src=""/>
+            <h2 class="username">Игорь Сидельников</h2>
+            <h3 class="remark-label">скуф</h3>
+            <p>This is card number 5.</p>
+          </div>
+        </div>
     </div>
   </body>
 </html>
