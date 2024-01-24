@@ -98,7 +98,26 @@
     <script>
       function init() {
         webApp = window.Telegram.WebApp;
-        if (webApp != null) webApp.expand();
+        if (webApp != null) {
+          webApp.expand();
+          getContacts();
+        }
+      }
+
+      function getContacts() {
+				log("Get stored keys");
+				var request = webApp.CloudStorage.getKeys(function(error, value) {
+					if (!error) {
+						log(value)
+					} else {
+						log(error);
+					}
+				});
+			}
+
+      function log(message) {
+				console.log(message);
+        //debugText.text += message + "\n";
       }
     </script>
     
