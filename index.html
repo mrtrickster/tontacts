@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
       body {
         margin: 0; padding: 0;
@@ -92,8 +93,15 @@
         text-overflow: ellipsis;
         margin: 0px 2px;
       }
-      
     </style>
+
+    <script>
+      window.initFunction = async function() {
+        webApp = window.Telegram.WebApp;
+          if (webApp != null) webApp.expand();
+      });
+    </script>
+    
   </head>
   <body>
     <div class="horizontal-block">
