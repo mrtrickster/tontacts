@@ -107,13 +107,13 @@
       function getContacts() {
 				log("Get stored keys");
 				var request = webApp.CloudStorage.getKeys(function(error, value) {
-					if (!error) {
+				if (!error) {
 						log(value)
 					} else {
 						log(error);
 					}
 				});
-			}
+		  }
 
       function log(message) {
 				console.log(message);
