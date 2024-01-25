@@ -173,21 +173,23 @@
 
       function getContacts() {
 				log("Get stored keys");
-				var request = webApp.CloudStorage.getKeys(function(error, value) {
-				if (!error) {
-						log("stored " + value.length + " keys");
-						if (value.length == 0) {
-							log("no keys found, it's time to create first contact - yourself!");
-              showNewContactScreen(true);
-						} else {
-							log(value.length + " keys found, display contacts list");
-              showContactsListScreen(value);
-            }
-					} else {
-						log(error);
-					}
-				});
+				var request = webApp.CloudStorage.getKeys(onStoredKeys);
 		  }
+
+      function onStoredKeys(error, value) {
+        if (!error) {
+          log("stored " + value.length + " keys");
+          if (value.length == 0) {
+            log("no keys found, it's time to create first contact - yourself!");
+            showNewContactScreen(true);
+          } else {
+            log(value.length + " keys found, display contacts list");
+            showContactsListScreen(value);
+          }
+        } else {
+          log(error);
+        }
+      }
 
       function saveNewContact() {
         var newKey = makeId(64);
