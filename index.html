@@ -344,25 +344,41 @@
 
         </div>
         
-        <div class="BirthData" style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
-          <div class="Frame15" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
-            <div class="DateOfBirth" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Date of birth:</div>
-            <div class="Frame13" style="height: 27px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #CCCCCC; border-radius: 4px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div class="DdMmYyyy" style="width: 94px; color: #646464; font-size: 12px; font-family: Inter; font-style: italic; font-weight: 200; word-wrap: break-word">DD.MM.YYYY</div>
-            </div>
+        <div class="BirthData" style="width: 100%; align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 2.5%; display: inline-flex">
+
+          <div class="dateOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+
+            <div class="label" style="width: 100%; text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Date of birth:</div>
+
+            <input type="date" id="dateOfBirth" name="dateOfBirth" style="width: 100%;">
           </div>
-          <div class="Frame16" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
-            <div class="PlaceOfBirth" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Place of birth:</div>
-            <div class="Frame13" style="height: 27px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #CCCCCC; border-radius: 4px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div class="SelectCountry" style="width: 120px; color: #646464; font-size: 12px; font-family: Inter; font-style: italic; font-weight: 200; word-wrap: break-word">Select country...</div>
-            </div>
+
+          <div class="placeOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+
+            <div class="label" style="width: 100%; text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Place of birth:</div>
+
+            <select name="countries" id="countries" style="width: 100%;">
+              <option value="ru">Russia</option>
+              <option value="th">Thailand</option>
+              <option value="us">USA</option>
+              <option value="ua">Ukraine</option>
+            </select>
+
           </div>
-          <div class="Frame17" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
-            <div class="Nationality" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Nationality:</div>
-            <div class="Frame13" style="height: 27px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #CCCCCC; border-radius: 4px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div class="SelectNationality" style="width: 120px; color: #646464; font-size: 12px; font-family: Inter; font-style: italic; font-weight: 200; word-wrap: break-word">Select nationality...</div>
-            </div>
+
+          <div class="nationalityBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+
+            <div class="label" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Nationality:</div>
+            
+            <select name="countries" id="countries" style="width: 100%;">
+              <option value="ru">Russia</option>
+              <option value="th">Thailand</option>
+              <option value="us">USA</option>
+              <option value="ua">Ukraine</option>
+            </select>
+          
           </div>
+        
         </div>
         
         <div class="OccupationData" style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
