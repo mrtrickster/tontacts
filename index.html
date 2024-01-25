@@ -189,6 +189,15 @@
 				});
 		  }
 
+      function saveNewContact() {
+        var newKey = makeId(64);
+        var newValue = {
+          firstName: document.getElementById("firstName").value,
+          lastName: document.getElementById("lastName").value
+        };
+        webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue));
+      }
+
       function showContactsListScreen() {
         switchDiv('contactsListScreen');
       }
@@ -219,6 +228,18 @@
 				console.log(message);
 				alert(message);
         //debugText.text += message + "\n";
+      }
+
+      function makeId(length) {
+          let result = 'id_';
+          const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          const charactersLength = characters.length;
+          let counter = 0;
+          while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+          }
+          return result;
       }
     </script>
     
@@ -429,10 +450,10 @@
           </div>
         </div>
         
-        <div class="Frame2" style="align-self: stretch; padding: 32px; box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.02); justify-content: center; align-items: center; gap: 16px; display: inline-flex">
-          <div class="Cancel" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Cancel</div>
-          <div class="Save" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Save</div>
-          <div class="Revert" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Revert</div>
+        <div class="Frame2" style="width: 100%; align-self: stretch; padding: 32px; box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.02); justify-content: center; align-items: center; gap: 16px; display: inline-flex">
+          <div class="Cancel" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word" onclick="showContactsListScreen()">Cancel</div>
+          <div class="Save" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word" onclick="saveNewContact()">Save</div>
+          <div class="Revert" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word" onclick="showNewContactScreen()">Revert</div>
         </div>
       </div>
     </div>
