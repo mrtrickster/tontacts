@@ -192,6 +192,20 @@
         }
       }
 
+      function showNewContactScreen(yourself) {
+        switchDiv('newContactScreen');
+        if (yourself) {
+          document.getElementById("firstName").value = webApp.initDataUnsafe.user.first_name;
+          document.getElementById("lastName").value = webApp.initDataUnsafe.user.last_name;
+        }
+      }
+
+      function showContactsListScreen(items) {
+        log("showContactsListScreen");
+        switchDiv('contactsListScreen');
+        //items.forEach(createContactListItem);
+      }
+
       function saveNewContact() {
         var newKey = makeId(64);
         var newValue = {
@@ -199,12 +213,6 @@
           lastName: document.getElementById("lastName").value
         };
         webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue));
-      }
-
-      function showContactsListScreen(items) {
-        log("showContactsListScreen");
-        switchDiv('contactsListScreen');
-        items.forEach(createContactListItem);
       }
 
       function createContactListItem(item, index, arr) {
@@ -233,14 +241,6 @@
           }
         } else {
           log(error);
-        }
-      }
-
-      function showNewContactScreen(yourself) {
-        switchDiv('newContactScreen');
-        if (yourself) {
-          document.getElementById("firstName").value = webApp.initDataUnsafe.user.first_name;
-          document.getElementById("lastName").value = webApp.initDataUnsafe.user.last_name;
         }
       }
 
