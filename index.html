@@ -177,8 +177,8 @@
 				if (!error) {
 						log("stored " + value.length + " keys");
 						if (value.length == 0) {
-							log("no keys found, it's time to create first contact!");
-              showNewContactScreen();
+							log("no keys found, it's time to create first contact - yourself!");
+              showNewContactScreen(true);
 						} else {
 							log(value.length + " keys found, display contacts list");
               showContactsListScreen();
@@ -193,8 +193,12 @@
         switchDiv('contactsListScreen');
       }
 
-      function showNewContactScreen() {
+      function showNewContactScreen(yourself) {
         switchDiv('newContactScreen');
+        if (yourself) {
+          document.getElementById("firstName").value = webApp.initDataUnsafe.user.first_name;
+          document.getElementById("lastName").value = webApp.initDataUnsafe.user.last_name;
+        }
       }
 
       function switchDiv(targetDivId) {
@@ -331,6 +335,7 @@
               <label class="switch-label">Gender:</label>
 
               <select name="gender" id="gender" style="width: 100%;">
+                <option>Select</option>
                 <option value="m">Male</option>
                 <option value="f">Female</option>
                 <option value="x">Other</option>
@@ -356,6 +361,7 @@
             <div class="label" style="width: 100%; text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Place of birth:</div>
 
             <select name="countries" id="countries" style="width: 100%;">
+              <option>Select</option>
               <option value="ru">Russia</option>
               <option value="th">Thailand</option>
               <option value="us">USA</option>
@@ -369,6 +375,7 @@
             <div class="label" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Nationality:</div>
             
             <select name="countries" id="countries" style="width: 100%;">
+              <option>Select</option>
               <option value="ru">Russia</option>
               <option value="th">Thailand</option>
               <option value="us">USA</option>
@@ -399,9 +406,10 @@
 
           <div class="statusBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
 
-            <div class="label" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Nationality:</div>
+            <div class="label" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Status:</div>
             
             <select name="status" id="status" style="width: 100%;">
+              <option>Select</option>
               <option value="0">Unknown</option>
               <option value="1">Active</option>
               <option value="2">Vacation</option>
