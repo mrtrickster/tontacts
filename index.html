@@ -108,7 +108,10 @@
 				log("Get stored keys");
 				var request = webApp.CloudStorage.getKeys(function(error, value) {
 				if (!error) {
-						log(value)
+						log("stored " + value.length + " keys");
+						if (value.length == 0) {
+							log("no keys found, it's time to create first contact!");
+						}
 					} else {
 						log(error);
 					}
