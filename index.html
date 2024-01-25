@@ -107,6 +107,59 @@
         padding: 0px;
         overflow-y: auto;
       }
+
+      
+
+      .switch-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .switch-label {
+        margin-right: 10px;
+      }
+
+      .switch-input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .switch-slider {
+        position: relative;
+        cursor: pointer;
+        width: 50px;
+        height: 25px;
+        background-color: #ccc;
+        border-radius: 25px;
+      }
+
+      .switch-slider:before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: 0.3s;
+      }
+
+      .switch-input:checked + .switch-slider:before {
+        transform: translateX(25px);
+      }
+
+      .switch-label::before {
+        content: 'Female';
+        display: block;
+        color: #888;
+        margin-bottom: 5px;
+      }
+
+      .switch-label::after {
+        content: 'Male';
+        display: block;
+        color: #888;
+        margin-top: 5px;
+      }
     </style>
 
     <script>
@@ -223,39 +276,29 @@
           </div>
           <div class="Frame14" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
             <div class="DisplayName" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Display name: </div>
-            <div class="Frame13" style="width: 120px; height: 27px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #CCCCCC; border-radius: 4px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div class="EnterDisplayName" style="flex: 1 1 0; align-self: stretch; color: #646464; font-size: 12px; font-family: Inter; font-style: italic; font-weight: 200; word-wrap: break-word">Enter display name...</div>
-            </div>
+            <input type="text" id="displayName" name="displayName" placeholder="Enter display name...">
           </div>
           <div class="Frame20" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
             <div class="ShortRemark" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Short remark: </div>
-            <div class="Frame13" style="width: 149px; height: 27px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #CCCCCC; border-radius: 4px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div class="EnterShortRemark" style="flex: 1 1 0; align-self: stretch; color: #646464; font-size: 12px; font-family: Inter; font-style: italic; font-weight: 200; word-wrap: break-word">Enter short remark...</div>
-            </div>
+            <input type="text" id="shortRemark" name="shortRemark" placeholder="Enter short remark...">
           </div>
         </div>
         <div class="BasicPersonalData" style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
           <div class="Frame14" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
             <div class="FirstName" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">First name: </div>
-            <div class="Frame13" style="width: 160px; height: 27px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #CCCCCC; border-radius: 4px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div class="EnterFirstName" style="flex: 1 1 0; align-self: stretch; color: #646464; font-size: 12px; font-family: Inter; font-style: italic; font-weight: 200; word-wrap: break-word">Enter first name...</div>
-            </div>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter first name...">
           </div>
           <div class="Frame15" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
             <div class="LastName" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Last name: </div>
-            <div class="Frame13" style="width: 160px; height: 27px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #CCCCCC; border-radius: 4px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div class="EnterLastName" style="flex: 1 1 0; align-self: stretch; color: #646464; font-size: 12px; font-family: Inter; font-style: italic; font-weight: 200; word-wrap: break-word">Enter last name...</div>
-            </div>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter last name...">
           </div>
           <div class="Frame16" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
             <div class="Sex" style="text-align: center; color: #646464; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Sex: </div>
-            <div class="Frame17" style="width: 62px; height: 27px; position: relative">
-              <div class="Frame13" style="width: 62px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; left: 0px; top: 0px; position: absolute; background: #CCCCCC; border-radius: 13px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-                <div class="M" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">M</div>
-                <div class="F" style="flex: 1 1 0; text-align: center; color: #646464; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">F</div>
-              </div>
-              <div class="Frame14" style="width: 34px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; left: 0px; top: 0px; position: absolute; background: #646464; border-radius: 13px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-                <div class="M" style="flex: 1 1 0; text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">M</div>
+            <div class="switch-container">
+              <label class="switch-label">Gender:</label>
+              <div class="switch-slider">
+                <input type="radio" class="switch-input" name="gender" id="male" checked>
+                <input type="radio" class="switch-input" name="gender" id="female">
               </div>
             </div>
           </div>
