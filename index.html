@@ -204,6 +204,7 @@
       }
 
       function createContactListItem(item, index, arr) {
+        log(item);
         var source = document.querySelector('#sampleCard');
         var clone = source.cloneNode(true);
         source.after(clone);
