@@ -199,12 +199,13 @@
       }
 
       function showContactsListScreen(items) {
+        log("showContactsListScreen");
         switchDiv('contactsListScreen');
         items.forEach(createContactListItem);
       }
 
       function createContactListItem(item, index, arr) {
-        log("createContactListItem:" + item);
+        log("createContactListItem");
         var source = document.querySelector('#sampleCard');
         var clone = source.cloneNode(true);
         source.after(clone);
