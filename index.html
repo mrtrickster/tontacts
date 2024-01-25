@@ -209,6 +209,7 @@
         source.after(clone);
         clone.style.display = 'block';
         source.style.display = 'none';
+        clone.getElementsByClassName('username')[0].value = item.firstName + " " + item.lastName;
       }
 
       function showNewContactScreen(yourself) {
