@@ -38,7 +38,7 @@
         display: none;
       }
       
-      .container {
+      .contactsListScreen {
         display: flex;
         flex-direction: column;
         min-height: calc(100vh - 72px);
@@ -97,6 +97,16 @@
         text-overflow: ellipsis;
         margin: 0px 2px;
       }
+
+      .newContactScreen {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 72px);
+        background-color: #999;
+        margin: 0px;
+        padding: 0px;
+        overflow-y: auto;
+      }
     </style>
 
     <script>
@@ -136,7 +146,7 @@
 
       function switchDiv(targetDivId) {
         // Hide all divs
-        var allDivs = document.getElementsByClassName('myDivs');
+        var allDivs = document.getElementsByClassName('switchableDiv');
         for (var i = 0; i < allDivs.length; i++) {
           allDivs[i].style.display = 'none';
         }
@@ -164,7 +174,7 @@
       <button class="menu-button">≡</button>
     </div>
     
-    <div id="contactsListScreen" class="container switchableDiv">
+    <div id="contactsListScreen" class="contactsListScreen switchableDiv">
     	<div id="contactsListGrid" class="grid">
           <div class="card">
           	<img class="userpic" src=""/>
@@ -199,7 +209,7 @@
         </div>
     </div>
 
-    <div id="newContactScreen" class="switchableDiv">
+    <div id="newContactScreen" class="newContactScreen switchableDiv">
       <div class="Frame18" style="width: 446px; height: 464px; padding-top: 8px; padding-bottom: 8px; background: white; border-radius: 8px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
         <div class="DisplaySettings" style="align-self: stretch; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
           <div class="Frame19" style="justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
