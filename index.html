@@ -185,7 +185,7 @@
           } else {
             //log(value.length + " keys found, display contacts list");
             log(value);
-            showContactsListScreen(value);
+            showContactsListScreen();
           }
         } else {
           log(error);
@@ -200,7 +200,7 @@
         }
       }
 
-      function showContactsListScreen(items) {
+      function showContactsListScreen() {
         log("showContactsListScreen");
         switchDiv('contactsListScreen');
         //items.forEach(createContactListItem);
