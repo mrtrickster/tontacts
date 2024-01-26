@@ -66,7 +66,7 @@
             clone.getElementsByClassName('username')[0].innerHTML = item.firstName + " " + item.lastName;
             clone.onclick = function() {
                 log("item with key " + item.key + " pressed");
-                showEditContactScreen(item.key);
+                showViewContactScreen(item.key);
             }
         }
     </script>
@@ -76,7 +76,7 @@
 
     <div id="header" class="horizontal-block">
       <button class="back-button">←</button>
-      <div class="title-label">Your Title</div>
+      <div class="title-label">Your Contacts</div>
       <button class="menu-button">≡</button>
     </div>
     

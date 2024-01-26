@@ -48,19 +48,12 @@
             document.getElementById("lastName").value = item.lastName;
         }
 
-        function updateContact() {
-            var newValue = {
-                firstName: document.getElementById("firstName").value,
-                lastName: document.getElementById("lastName").value
-            };
-            webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
+        function editContact() {
+            showViewContactScreen(contactKey);
         }
 
-        function deleteContact() {
-            let text = "Are you sure you want to delete?";
-            if (confirm(text) == true) {
-                webApp.CloudStorage.removeItem(contactKey, showContactsListScreen());
-            }
+        function shareContact() {
+            alert("Sorry, sharing contacts is not available yet.");
         }
 
       //
@@ -71,7 +64,7 @@
 
     <div id="header" class="horizontal-block">
       <button class="back-button">←</button>
-      <div class="title-label">Edit Contact</div>
+      <div class="title-label">View Contact</div>
       <button class="menu-button">≡</button>
     </div>
 
@@ -167,13 +160,13 @@
         </div>
         <div class="Frame2 horizontal-container">
           <div class="block1" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="showContactsListScreen()">Cancel</button>
+            <button style="width: 100%;" onclick="showContactsListScreen()">Close</button>
           </div>
           <div class="block2" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="updateContact()">Save</button>
+            <button style="width: 100%;" onclick="editContact()">Edit</button>
           </div>
           <div class="block3" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="deleteContact()">Delete</button>
+            <button style="width: 100%;" onclick="shareContact()">Share</button>
           </div>
         </div>
       </div>
