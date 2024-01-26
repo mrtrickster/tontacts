@@ -48,6 +48,10 @@
             document.getElementById("lastName").value = item.lastName;
         }
 
+        function viewContact() {
+            showViewContactScreen(contactKey);
+        }
+
         function updateContact() {
             var newValue = {
                 firstName: document.getElementById("firstName").value,
@@ -167,7 +171,7 @@
         </div>
         <div class="Frame2 horizontal-container">
           <div class="block1" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="showContactsListScreen()">Cancel</button>
+            <button style="width: 100%;" onclick="viewContact()">Cancel</button>
           </div>
           <div class="block2" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <button style="width: 100%;" onclick="updateContact()">Save</button>

@@ -44,8 +44,8 @@
 
         function fillData(value) {
             var item = JSON.parse(value);
-            document.getElementById("firstName").value = item.firstName;
-            document.getElementById("lastName").value = item.lastName;
+            document.getElementById("firstName").innerHTML = item.firstName;
+            document.getElementById("lastName").innerHTML = item.lastName;
         }
 
         function editContact() {
@@ -80,21 +80,21 @@
           </div>
           <div class="displayNameBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Display name: </div>
-            <input type="text" id="displayName" name="displayName" style="width: 100%;" placeholder="Enter display name...">
+            <p id="displayName" style="width: 100%;"></p>
           </div>
           <div class="shortRemarkBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Short remark: </div>
-            <input type="text" id="shortRemark" name="shortRemark" style="width: 100%;" placeholder="Enter short remark...">
+            <p id="shortRemark" style="width: 100%;"></p>
           </div>
         </div>
         <div class="BasicPersonalData horizontal-container">
           <div class="firstNameBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">First name: </div>
-            <input type="text" id="firstName" name="firstName" style="width: 100%;" placeholder="Enter first name...">
+            <p id="firstName" style="width: 100%;"></p>
           </div>
           <div class="lastNameBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Last name: </div>
-            <input type="text" id="lastName" name="lastName" style="width: 100%;" placeholder="Enter last name...">
+            <p id="lastName" style="width: 100%;"></p>
           </div>
           <div class="sexBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Sex: </div>
