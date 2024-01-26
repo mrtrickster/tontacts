@@ -185,7 +185,7 @@
           } else {
             //log(value.length + " keys found, display contacts list");
             log(value);
-            showContactsListScreen();
+            showContactsListScreen(value);
           }
         } else {
           log(error);
@@ -200,19 +200,10 @@
         }
       }
 
-      function showContactsListScreen() {
+      function showContactsListScreen(items) {
         log("showContactsListScreen");
         switchDiv('contactsListScreen');
-        //items.forEach(createContactListItem);
-      }
-
-      function saveNewContact() {
-        var newKey = makeId(64);
-        var newValue = {
-          firstName: document.getElementById("firstName").value,
-          lastName: document.getElementById("lastName").value
-        };
-        webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue));
+        items.forEach(createContactListItem);
       }
 
       function createContactListItem(item, index, arr) {
@@ -228,8 +219,8 @@
       }
 
       function getContact(key) {
-				log("Get stored key: " + key);
-				var request = webApp.CloudStorage.getItem(key, onStoredKey);
+        log("Get stored key: " + key);
+        var request = webApp.CloudStorage.getItem(key, onStoredKey);
       }
 
       function onStoredKey(error, value) {
@@ -242,6 +233,15 @@
         } else {
           log(error);
         }
+      }
+
+      function saveNewContact() {
+        var newKey = makeId(64);
+        var newValue = {
+          firstName: document.getElementById("firstName").value,
+          lastName: document.getElementById("lastName").value
+        };
+        webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue));
       }
 
       function switchDiv(targetDivId) {
