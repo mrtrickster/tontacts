@@ -47,6 +47,7 @@
             document.getElementById("firstName").innerHTML = item.firstName;
             document.getElementById("lastName").innerHTML = item.lastName;
             document.getElementById("gender").value = item.gender;
+            document.getElementById("dateOfBirth").value = item.dateOfBirth;
         }
 
         function editContact() {
@@ -110,7 +111,7 @@
         <div class="BirthData horizontal-container">
           <div class="dateOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Date of birth:</div>
-            <input type="date" id="dateOfBirth" name="dateOfBirth" style="width: 100%;">
+            <input type="date" id="dateOfBirth" name="dateOfBirth" style="width: 100%;" placeholder="dd-mm-yyyy">
           </div>
           <div class="placeOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Place of birth:</div>

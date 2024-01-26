@@ -26,7 +26,8 @@
             var newValue = {
                 firstName: document.getElementById("firstName").value,
                 lastName: document.getElementById("lastName").value,
-                gender: document.getElementById("gender").value
+                gender: document.getElementById("gender").value,
+                dateOfBirth: document.getElementById("dateOfBirth").value
             };
             webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue), showContactsListScreen());
         }
@@ -84,7 +85,7 @@
         <div class="BirthData horizontal-container">
           <div class="dateOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Date of birth:</div>
-            <input type="date" id="dateOfBirth" name="dateOfBirth" style="width: 100%;">
+            <input type="date" id="dateOfBirth" name="dateOfBirth" style="width: 100%;" placeholder="dd-mm-yyyy">
           </div>
           <div class="placeOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Place of birth:</div>
