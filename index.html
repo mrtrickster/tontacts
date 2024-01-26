@@ -223,13 +223,14 @@
         }
       }
 
-      function createContactListItem(item) {
-        log("createContactListItem: " + item);
+      function createContactListItem(value) {
+        log("createContactListItem: " + value);
         var source = document.querySelector('#sampleCard');
         var clone = source.cloneNode(true);
         source.after(clone);
         clone.style.display = 'block';
         source.style.display = 'none';
+        var item = JSON.parse(value);
         clone.getElementsByClassName('username')[0].innerHTML = item.firstName + " " + item.lastName;
       }
 
