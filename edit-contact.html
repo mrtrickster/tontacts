@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="styles.css">
 
     <script>
+
+        var contactKey;
+
         function init() {
             webApp = window.Telegram.WebApp;
             if (webApp != null) {
                 webApp.expand();
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
-                const key = urlParams.get('key');
-                if (key) {
-                    getContact(key);
+                contactKey = urlParams.get('key');
+                if (contactKey) {
+                    getContact();
                 }
             }
         }
 
-        function getContact(key) {
-            log("Get stored key: " + key);
-            var request = webApp.CloudStorage.getItem(key, onStoredKey);
+        function getContact() {
+            log("Get stored key: " + contactKey);
+            var request = webApp.CloudStorage.getItem(contactKey, onStoredKey);
         }
 
         function onStoredKey(error, value) {
@@ -45,13 +48,16 @@
             document.getElementById("lastName").value = item.lastName;
         }
 
-        function saveNewContact() {
-            var newKey = makeId(64);
+        function updateContact() {
             var newValue = {
                 firstName: document.getElementById("firstName").value,
                 lastName: document.getElementById("lastName").value
             };
-            webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue));
+            webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
+        }
+
+        function deleteContact() {
+            webApp.CloudStorage.removeItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
         }
 
       //
@@ -161,10 +167,10 @@
             <button style="width: 100%;" onclick="showContactsListScreen()">Cancel</button>
           </div>
           <div class="block2" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="saveNewContact()">Save</button>
+            <button style="width: 100%;" onclick="updateContact()">Save</button>
           </div>
           <div class="block3" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="showNewContactScreen(false)">Revert</button>
+            <button style="width: 100%;" onclick="deleteContact()">Delete</button>
           </div>
         </div>
       </div>

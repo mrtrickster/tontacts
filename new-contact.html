@@ -27,7 +27,7 @@
                 firstName: document.getElementById("firstName").value,
                 lastName: document.getElementById("lastName").value
             };
-            webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue));
+            webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue), showContactsListScreen());
         }
 
       //
