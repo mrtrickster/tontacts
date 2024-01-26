@@ -21,16 +21,16 @@
             var request = webApp.CloudStorage.getKeys(onStoredKeys);
         }
 
-        function onStoredKeys(error, value) {
+        function onStoredKeys(error, keys) {
             if (!error) {
-                log("stored " + value.length + " keys");
-                if (value.length == 0) {
+                log("stored " + keys.length + " keys");
+                if (keys.length == 0) {
                     log("no keys found, it's time to create first contact - yourself!");
                     showNewContactScreen(true);
                 } else {
                     //log(value.length + " keys found, display contacts list");
-                    log(value);
-                    value.forEach(getContact);
+                    log(keys);
+                    keys.forEach(getContact);
                 }
             } else {
                 log(error);
@@ -47,21 +47,22 @@
                 if (value.length == 0) {
                     log("no key found");
                 } else {
-                    createContactListItem(value);
+                    var item = JSON.parse(value);
+                    item.key = value;
+                    createContactListItem(item);
                 }
             } else {
                 log(error);
             }
         }
 
-        function createContactListItem(value) {
-            log("createContactListItem: " + value);
+        function createContactListItem(item) {
+            log("createContactListItem: " + item);
             var source = document.querySelector('#sampleCard');
             var clone = source.cloneNode(true);
             source.after(clone);
             clone.style.display = 'block';
             source.style.display = 'none';
-            var item = JSON.parse(value);
             clone.getElementsByClassName('username')[0].innerHTML = item.firstName + " " + item.lastName;
             clone.onclick = function() {
                 log("item with key " + item.key + " pressed");
