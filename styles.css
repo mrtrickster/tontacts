@@ -101,6 +101,15 @@ body {
   overflow-y: auto;
 }
 
+.newContactScreen .horizontal-container {
+  width: 100%;
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 2.5%;
+}
+
 .label {
   text-align: center;
   color: #646464;
