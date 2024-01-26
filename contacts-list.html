@@ -39,21 +39,25 @@
 
         function getContact(key, index, arr) {
             log("Get stored key: " + key);
-            var request = webApp.CloudStorage.getItem(key, onStoredKey);
+            var request = webApp.CloudStorage.getItem(key, 
+                function() {
+                    if (!error) {
+                        if (value.length == 0) {
+                            log("no key found");
+                        } else {
+                            var item = JSON.parse(value);
+                            item.key = key;
+                            createContactListItem(item);
+                        }
+                    } else {
+                        log(error);
+                    }
+                }
+            );
         }
 
         function onStoredKey(error, value) {
-            if (!error) {
-                if (value.length == 0) {
-                    log("no key found");
-                } else {
-                    var item = JSON.parse(value);
-                    item.key = value;
-                    createContactListItem(item);
-                }
-            } else {
-                log(error);
-            }
+
         }
 
         function createContactListItem(item) {
