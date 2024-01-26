@@ -40,7 +40,7 @@
         function getContact(key, index, arr) {
             log("Get stored key: " + key);
             var request = webApp.CloudStorage.getItem(key, 
-                function() {
+                function(error, value) {
                     if (!error) {
                         if (value.length == 0) {
                             log("no key found");
