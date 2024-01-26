@@ -46,6 +46,7 @@
             var item = JSON.parse(value);
             document.getElementById("firstName").value = item.firstName;
             document.getElementById("lastName").value = item.lastName;
+            document.getElementById("gender").value = item.gender;
         }
 
         function viewContact() {
@@ -55,7 +56,8 @@
         function updateContact() {
             var newValue = {
                 firstName: document.getElementById("firstName").value,
-                lastName: document.getElementById("lastName").value
+                lastName: document.getElementById("lastName").value,
+                gender: document.getElementById("gender").value
             };
             webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
         }

@@ -25,7 +25,8 @@
             var newKey = makeId(64);
             var newValue = {
                 firstName: document.getElementById("firstName").value,
-                lastName: document.getElementById("lastName").value
+                lastName: document.getElementById("lastName").value,
+                gender: document.getElementById("gender").value
             };
             webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue), showContactsListScreen());
         }
