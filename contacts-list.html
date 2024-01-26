@@ -63,7 +63,10 @@
             source.style.display = 'none';
             var item = JSON.parse(value);
             clone.getElementsByClassName('username')[0].innerHTML = item.firstName + " " + item.lastName;
-            clone.onclick = function() { showEditContactScreen(item.key); }
+            clone.onclick = function() {
+                log("item with key " + item.key + " pressed");
+                showEditContactScreen(item.key);
+            }
         }
     </script>
 
