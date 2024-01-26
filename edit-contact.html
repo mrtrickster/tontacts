@@ -13,7 +13,6 @@
             if (webApp != null) {
                 webApp.expand();
                 const queryString = window.location.search;
-                log(queryString);
                 const urlParams = new URLSearchParams(queryString);
                 const key = urlParams.get('key');
                 if (key) {

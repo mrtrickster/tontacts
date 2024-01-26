@@ -7,6 +7,7 @@ function showNewContactScreen(yourself) {
 }
 
 function showEditContactScreen(key) {
+    log("editing contact " + key);
     window.open("edit-contact.html?key=" + key, "_self");
 }
 
