@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+  </head>
+  <body onload="init()">
+
+    <div id="header" class="horizontal-block">
+      <button class="back-button">←</button>
+      <div class="title-label">Your Title</div>
+      <button class="menu-button">≡</button>
+    </div>
+    
+    <div id="contactsListScreen" class="contactsListScreen switchableDiv">
+    	<div id="contactsListGrid" class="grid">
+        <div id="sampleCard" class="card">
+          <img class="userpic" src=""/>
+          <h2 class="username"></h2>
+          <h3 class="remark-label"></h3>
+        </div>
+      </div>
+      <div>
+        <button onclick="showNewContactScreen(false)">Add contact</button>
+      </div>
+    </div>
+
+  </body>
+</html>
