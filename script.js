@@ -6,6 +6,10 @@ function showNewContactScreen(yourself) {
     window.open("new-contact.html?yourself=" + yourself, "_self");
 }
 
+function showEditContactScreen(key) {
+    window.open("edit-contact.html?key=" + key, "_self");
+}
+
 function log(message) {
     console.log(message);
     alert(message);
