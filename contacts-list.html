@@ -7,6 +7,65 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
     
+    <script>
+        function init() {
+            webApp = window.Telegram.WebApp;
+            if (webApp != null) {
+                webApp.expand();
+                getContacts();
+            }
+        }
+
+        function getContacts() {
+            log("Get stored keys");
+            var request = webApp.CloudStorage.getKeys(onStoredKeys);
+        }
+
+        function onStoredKeys(error, value) {
+            if (!error) {
+                log("stored " + value.length + " keys");
+                if (value.length == 0) {
+                    log("no keys found, it's time to create first contact - yourself!");
+                    showNewContactScreen(true);
+                } else {
+                    //log(value.length + " keys found, display contacts list");
+                    log(value);
+                    items.forEach(getContact);
+                }
+            } else {
+                log(error);
+            }
+        }
+
+        function getContact(key, index, arr) {
+            log("Get stored key: " + key);
+            var request = webApp.CloudStorage.getItem(key, onStoredKey);
+        }
+
+        function onStoredKey(error, value) {
+            if (!error) {
+                if (value.length == 0) {
+                    log("no key found");
+                } else {
+                    createContactListItem(value);
+                }
+            } else {
+                log(error);
+            }
+        }
+
+        function createContactListItem(value) {
+            log("createContactListItem: " + value);
+            var source = document.querySelector('#sampleCard');
+            var clone = source.cloneNode(true);
+            source.after(clone);
+            clone.style.display = 'block';
+            source.style.display = 'none';
+            var item = JSON.parse(value);
+            clone.getElementsByClassName('username')[0].innerHTML = item.firstName + " " + item.lastName;
+        }
+    </script>
+
   </head>
   <body onload="init()">
 
@@ -18,7 +77,7 @@
     
     <div id="contactsListScreen" class="contactsListScreen switchableDiv">
     	<div id="contactsListGrid" class="grid">
-        <div id="sampleCard" class="card">
+        <div id="sampleCard" class="card" style="display: none;">
           <img class="userpic" src=""/>
           <h2 class="username"></h2>
           <h3 class="remark-label"></h3>
