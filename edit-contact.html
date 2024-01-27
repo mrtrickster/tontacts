@@ -88,8 +88,10 @@
         }
 
         function onUserpicSelected() {
+            alert("userpic file selected");
             var userpicInput = document.getElementById("userpic");
             const file = userpicInput.files[0];
+            alert("userpic file selected");
             readFileIntoMemory(file, function(fileInfo) {
                 alert("Read file " + fileInfo.name + " of size " + fileInfo.size);
                 // You can use fileInfo.content, which is a Uint8Array, here
