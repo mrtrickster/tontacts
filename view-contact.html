@@ -50,10 +50,12 @@
             document.getElementById("lastName").innerHTML = item.lastName;
             document.getElementById("gender").value = item.gender;
             document.getElementById("dateOfBirth").value = item.dateOfBirth;
-            document.getElementById("occupation").value = item.occupation;
-            document.getElementById("company").value = item.company;
+            document.getElementById("placeOfBirth").value = item.placeOfBirth;
+            document.getElementById("nationality").value = item.nationality;
+            document.getElementById("occupation").innerHTML = item.occupation;
+            document.getElementById("company").innerHTML = item.company;
             document.getElementById("workStatus").value = item.workStatus;
-            document.getElementById("description").value = item.description;
+            document.getElementById("description").innerHTML = item.description;
         }
 
         function editContact() {
@@ -121,7 +123,7 @@
           </div>
           <div class="placeOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Place of birth:</div>
-            <select name="countries" id="countries" style="width: 100%;">
+            <select name="placeOfBirth" id="placeOfBirth" style="width: 100%;">
               <option>Select</option>
               <option value="ru">Russia</option>
               <option value="th">Thailand</option>
@@ -131,23 +133,23 @@
           </div>
           <div class="nationalityBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Nationality:</div>
-            <select name="countries" id="countries" style="width: 100%;">
+            <select name="nationality" id="nationality" style="width: 100%;">
               <option>Select</option>
-              <option value="ru">Russia</option>
-              <option value="th">Thailand</option>
-              <option value="us">USA</option>
-              <option value="ua">Ukraine</option>
+              <option value="ru">Russian</option>
+              <option value="th">Thai</option>
+              <option value="us">US</option>
+              <option value="ua">Ukrainian</option>
             </select>
           </div>
         </div>
         <div class="OccupationData horizontal-container">
           <div class="occupationBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Occupation:</div>
-            <input type="text" id="occupation" name="occupation" style="width: 100%;" placeholder="Enter occupation...">
+            <p id="occupation" style="width: 100%;"></p>
           </div>
           <div class="companyBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Company:</div>
-            <input type="text" id="company" name="company" style="width: 100%;" placeholder="Enter company name...">
+            <p id="company" style="width: 100%;"></p>
           </div>
           <div class="statusBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Status:</div>
@@ -163,7 +165,7 @@
         <div class="Description horizontal-container">
           <div class="descriptionBlock" style="width: 95%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Description:</div>
-            <input type="text" id="description" name="description" style="width: 100%;" placeholder="Enter any text there...">
+            <p id="description" style="width: 100%;"></p>
           </div>
         </div>
         <div class="Frame2 horizontal-container">
