@@ -87,6 +87,12 @@
             }
         }
 
+        function onUserpicSelected() {
+            var userpicInput = document.getElementById("userpic");
+            const file = userpicInput.files[0];
+            alert(file.name + ", " + file.size + " file selected");
+        }
+
       //
   </script>
     
@@ -106,7 +112,7 @@
             <div class="userpicDiv" style="width: 48px; height: 48px; background: #D9D9D9; border-radius: 4px"></div>
             <div class="userpicControl" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
               <div class="label">Userpic:</div>
-              <input type="file" id="userpic" name="userpic" accept="image/jpeg" style="width: 100%;" />
+              <input type="file" id="userpic" name="userpic" accept="image/jpeg" style="width: 100%;" onchange="onUserpicSelected()" />
             </div>
           </div>
           <div class="displayNameBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
