@@ -64,6 +64,7 @@
             clone.style.display = 'block';
             source.style.display = 'none';
             clone.getElementsByClassName('username')[0].innerHTML = item.firstName + " " + item.lastName;
+            clone.getElementsByClassName('userpic')[0].src = item.userpic;
             clone.onclick = function() {
                 log("item with key " + item.key + " pressed");
                 showViewContactScreen(item.key);
