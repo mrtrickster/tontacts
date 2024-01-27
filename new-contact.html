@@ -29,7 +29,11 @@
                 firstName: document.getElementById("firstName").value,
                 lastName: document.getElementById("lastName").value,
                 gender: document.getElementById("gender").value,
-                dateOfBirth: document.getElementById("dateOfBirth").value
+                dateOfBirth: document.getElementById("dateOfBirth").value,
+                occupation: document.getElementById("occupation").value,
+                company: document.getElementById("company").value,
+                workStatus: document.getElementById("workStatus").value,
+                description: document.getElementById("description").value
             };
             webApp.CloudStorage.setItem(newKey, JSON.stringify(newValue), showContactsListScreen());
         }
