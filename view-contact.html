@@ -49,9 +49,9 @@
             document.getElementById("firstName").innerHTML = item.firstName;
             document.getElementById("lastName").innerHTML = item.lastName;
             document.getElementById("gender").innerHTML = gendersList[item.gender];
-            document.getElementById("dateOfBirth").value = item.dateOfBirth;
-            document.getElementById("placeOfBirth").value = item.placeOfBirth;
-            document.getElementById("nationality").value = item.nationality;
+            document.getElementById("dateOfBirth").innerHTML = item.dateOfBirth;
+            document.getElementById("placeOfBirth").innerHTML = countriesList[item.placeOfBirth];
+            document.getElementById("nationality").innerHTML = nationalitiesList[item.nationality];
             document.getElementById("occupation").innerHTML = item.occupation;
             document.getElementById("company").innerHTML = item.company;
             document.getElementById("workStatus").value = item.workStatus;
@@ -114,27 +114,15 @@
         <div class="BirthData horizontal-container">
           <div class="dateOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Date of birth:</div>
-            <input type="date" id="dateOfBirth" name="dateOfBirth" style="width: 100%;" placeholder="dd-mm-yyyy">
+            <p id="dateOfBirth" style="width: 100%;"></p>
           </div>
           <div class="placeOfBirthBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Place of birth:</div>
-            <select name="placeOfBirth" id="placeOfBirth" style="width: 100%;">
-              <option>Select</option>
-              <option value="ru">Russia</option>
-              <option value="th">Thailand</option>
-              <option value="us">USA</option>
-              <option value="ua">Ukraine</option>
-            </select>
+            <p id="placeOfBirth" style="width: 100%;"></p>
           </div>
           <div class="nationalityBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Nationality:</div>
-            <select name="nationality" id="nationality" style="width: 100%;">
-              <option>Select</option>
-              <option value="ru">Russian</option>
-              <option value="th">Thai</option>
-              <option value="us">US</option>
-              <option value="ua">Ukrainian</option>
-            </select>
+            <p id="nationality" style="width: 100%;"></p>
           </div>
         </div>
         <div class="OccupationData horizontal-container">
