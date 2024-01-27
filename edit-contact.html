@@ -104,8 +104,9 @@
             var reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function () {
-                //alert(reader.result);
-                return reader.result;
+                var result = reader.result;
+                alert(result);
+                return result;
             };
             reader.onerror = function (error) {
                 //alert('Error: ' + error);
