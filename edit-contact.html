@@ -91,14 +91,21 @@
             alert("userpic file selected");
             var userpicInput = document.getElementById("userpic");
             const file = userpicInput.files[0];
-            alert("userpic file selected");
-            readFileIntoMemory(file, function(fileInfo) {
-                alert("Read file " + fileInfo.name + " of size " + fileInfo.size);
-                // You can use fileInfo.content, which is a Uint8Array, here
-            });
-
-            //alert(file.name + ", " + file.size + " file selected");
+            const fileString = getBase64(file);
+            alert(fileString);
         }
+
+        function getBase64(file) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                console.log(reader.result);
+            };
+            reader.onerror = function (error) {
+                console.log('Error: ', error);
+            };
+        }
+
 
         function readFileIntoMemory(file, callback) {
             var reader = new FileReader();
