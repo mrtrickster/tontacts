@@ -75,7 +75,8 @@
                 occupation: document.getElementById("occupation").value,
                 company: document.getElementById("company").value,
                 workStatus: document.getElementById("workStatus").value,
-                description: document.getElementById("description").value
+                description: document.getElementById("description").value,
+                userpic: getUserpicFileString
             };
             webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
         }
@@ -89,22 +90,26 @@
 
         function onUserpicSelected() {
             alert("userpic file selected");
+            alert(getUserpicFileString());
+        }
+
+        function getUserpicFileString() {
             var userpicInput = document.getElementById("userpic");
             const file = userpicInput.files[0];
             const fileString = getBase64(file);
-            alert(fileString);
+            return(fileString);
         }
 
         function getBase64(file) {
             var reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function () {
-                alert(reader.result);
+                //alert(reader.result);
                 return reader.result;
             };
             reader.onerror = function (error) {
-                alert('Error: ' + error);
-                return null;
+                //alert('Error: ' + error);
+                return "";
             };
         }
 
