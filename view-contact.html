@@ -44,6 +44,8 @@
 
         function fillData(value) {
             var item = JSON.parse(value);
+            document.getElementById("displayName").innerHTML = item.displayName;
+            document.getElementById("shortRemark").innerHTML = item.shortRemark;
             document.getElementById("firstName").innerHTML = item.firstName;
             document.getElementById("lastName").innerHTML = item.lastName;
             document.getElementById("gender").value = item.gender;

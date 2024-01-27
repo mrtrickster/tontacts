@@ -44,6 +44,8 @@
 
         function fillData(value) {
             var item = JSON.parse(value);
+            document.getElementById("displayName").value = item.displayName;
+            document.getElementById("shortRemark").value = item.shortRemark;
             document.getElementById("firstName").value = item.firstName;
             document.getElementById("lastName").value = item.lastName;
             document.getElementById("gender").value = item.gender;
@@ -56,6 +58,8 @@
 
         function updateContact() {
             var newValue = {
+                displayName: document.getElementById("displayName").value,
+                shortRemark: document.getElementById("shortRemark").value,
                 firstName: document.getElementById("firstName").value,
                 lastName: document.getElementById("lastName").value,
                 gender: document.getElementById("gender").value,

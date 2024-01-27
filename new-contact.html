@@ -24,6 +24,8 @@
         function saveNewContact() {
             var newKey = makeId(64);
             var newValue = {
+                displayName: document.getElementById("displayName").value,
+                shortRemark: document.getElementById("shortRemark").value,
                 firstName: document.getElementById("firstName").value,
                 lastName: document.getElementById("lastName").value,
                 gender: document.getElementById("gender").value,
