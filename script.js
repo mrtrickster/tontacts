@@ -1,3 +1,5 @@
+const gendersList = { "": "", "m": "Male", "f": "Female", "x": "Other" };
+
 function showContactsListScreen() {
     window.open("contacts-list.html", "_self");
 }
