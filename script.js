@@ -18,7 +18,7 @@ function showEditContactScreen(key) {
 
 function log(message) {
     console.log(message);
-    alert(message);
+    //alert(message);
     //debugText.text += message + "\n";
 }
 
