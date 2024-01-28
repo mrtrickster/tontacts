@@ -12,6 +12,7 @@
         var contactKey;
 
         function init() {
+            log("init");
             webApp = window.Telegram.WebApp;
             if (webApp != null) {
                 webApp.expand();
@@ -36,7 +37,6 @@
                     log("no key found");
                 } else {
                     fillData(value);
-                    //createContactListItem(value);
                 }
             } else {
                 log(error);
@@ -82,7 +82,9 @@
                 description: document.getElementById("description").value,
                 userpic: getUserpicFileString()
             };
-            webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), onItemSet);
+            var jsonString = JSON.stringify(newValue);
+            log(jsonString);
+            webApp.CloudStorage.setItem(contactKey, jsonString, onItemSet);
         }
 
         function onItemSet(error, stored) {
@@ -124,7 +126,7 @@
                 return result;
             };
             reader.onerror = function (error) {
-                //alert('Error: ' + error);
+                log('Error: ' + error);
                 return "";
             };
         }
