@@ -26,7 +26,7 @@ function log(message) {
     console.log(message);
     //alert(message);
     if (debugText) {
-        debugText.innerHTML += message + "\n";
+        debugText.innerHTML += message + "<br/>";
     }
     //debugText.text += message + "\n";
 }

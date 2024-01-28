@@ -118,3 +118,10 @@ body {
   font-weight: 400;
   word-wrap: break-word;
 }
+
+.debugText {
+  width: 100%;
+  height: 100%;
+  color: red;
+  font-size: 8px;
+}
