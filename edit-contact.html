@@ -69,6 +69,7 @@
 
         function updateContact() {
             log("updateContact");
+            var fileString = getUserpicFileString();
             var newValue = {
                 displayName: document.getElementById("displayName").value,
                 shortRemark: document.getElementById("shortRemark").value,
@@ -82,7 +83,7 @@
                 company: document.getElementById("company").value,
                 workStatus: document.getElementById("workStatus").value,
                 description: document.getElementById("description").value,
-                userpic: "test data"
+                userpic: fileString.slice(0, 64)
             };
             var jsonString = JSON.stringify(newValue);
             log(jsonString);
