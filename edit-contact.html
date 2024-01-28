@@ -81,6 +81,14 @@
             webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
         }
 
+        function onItemSet(error, stored) {
+            if (error != null) {
+                alert(error);
+            } else {
+                alert("item was " + (stored ? "" : "not ") + "set");
+            }
+        }
+
         function deleteContact() {
             let text = "Are you sure you want to delete?";
             if (confirm(text) == true) {
