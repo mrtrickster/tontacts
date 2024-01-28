@@ -85,9 +85,13 @@
                 description: document.getElementById("description").value,
                 userpic: fileString.slice(0, 64)
             };
-            var jsonString = JSON.stringify(newValue);
-            log(jsonString);
-            webApp.CloudStorage.setItem(contactKey, jsonString, onItemSet);
+            try {
+                var jsonString = JSON.stringify(newValue);
+                log(jsonString);
+                webApp.CloudStorage.setItem(contactKey, jsonString, onItemSet);
+            } catch (error) {
+                log(error);
+            }
         }
 
         function onItemSet(error, stored) {
