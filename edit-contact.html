@@ -76,7 +76,7 @@
                 company: document.getElementById("company").value,
                 workStatus: document.getElementById("workStatus").value,
                 description: document.getElementById("description").value,
-                userpic: getUserpicFileString
+                userpic: getUserpicFileString()
             };
             webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
         }
@@ -89,8 +89,8 @@
         }
 
         function onUserpicSelected() {
-            alert("userpic file selected");
-            alert(getUserpicFileString());
+            //alert("userpic file selected");
+            alert("onUserpicSelected: " + getUserpicFileString());
         }
 
         function getUserpicFileString() {
@@ -105,7 +105,7 @@
             reader.readAsDataURL(file);
             reader.onload = function () {
                 var result = reader.result;
-                alert(result);
+                //alert(result);
                 return result;
             };
             reader.onerror = function (error) {
