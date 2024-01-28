@@ -12,6 +12,7 @@
         var contactKey;
 
         function init() {
+            debugText = document.getElementById("debugText");
             log("init");
             webApp = window.Telegram.WebApp;
             if (webApp != null) {
@@ -21,9 +22,10 @@
                 contactKey = urlParams.get('key');
                 if (contactKey) {
                     getContact();
+                } else {
+                    log("no contact key provided");
                 }
             }
-            debugText = document.getElementById("debugText");
         }
 
         function getContact() {
@@ -44,7 +46,7 @@
         }
 
         function fillData(value) {
-            log("fillData");
+            log("fillData: " + value);
             var item = JSON.parse(value);
             document.getElementById("displayName").value = item.displayName;
             document.getElementById("shortRemark").value = item.shortRemark;
@@ -80,7 +82,7 @@
                 company: document.getElementById("company").value,
                 workStatus: document.getElementById("workStatus").value,
                 description: document.getElementById("description").value,
-                userpic: getUserpicFileString()
+                userpic: "test data"
             };
             var jsonString = JSON.stringify(newValue);
             log(jsonString);

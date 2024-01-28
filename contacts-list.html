@@ -9,12 +9,12 @@
     
     <script>
         function init() {
+            debugText = document.getElementById("debugText");
             webApp = window.Telegram.WebApp;
             if (webApp != null) {
                 webApp.expand();
                 getContacts();
             }
-            debugText = document.getElementById("debugText");
         }
 
         function getContacts() {
