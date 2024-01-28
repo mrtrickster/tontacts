@@ -1,4 +1,4 @@
-const version = "0.1.1";
+const version = "0.1.2";
 
 const gendersList = { "": "", "m": "Male", "f": "Female", "x": "Other" };
 const countriesList = { "": "", "ru": "Russia", "th": "Thailand", "us": "USA", "ua": "Ukraine" };
@@ -7,21 +7,21 @@ const nationalitiesList = { "": "", "ru": "Russian", "th": "Thai", "us": "US", "
 var debugText;
 
 function showContactsListScreen() {
-    window.open("contacts-list.html", "_self");
+    window.open("contacts-list.html?cache=" + makeId(4), "_self");
 }
 
 function showNewContactScreen(yourself) {
-    window.open("new-contact.html?yourself=" + yourself, "_self");
+    window.open("new-contact.html?cache=" + makeId(4) + "&yourself=" + yourself, "_self");
 }
 
 function showViewContactScreen(key) {
     log("viewing contact " + key);
-    window.open("view-contact.html?key=" + key, "_self");
+    window.open("view-contact.html?cache=" + makeId(4) + "&key=" + key, "_self");
 }
 
 function showEditContactScreen(key) {
     log("editing contact " + key);
-    window.open("edit-contact.html?key=" + key, "_self");
+    window.open("edit-contact.html?cache=" + makeId(4) + "&key=" + key, "_self");
 }
 
 function log(message) {
