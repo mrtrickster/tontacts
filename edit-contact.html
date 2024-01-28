@@ -10,10 +10,12 @@
     <script>
 
         var contactKey;
+        var newValue;
 
         function init() {
             debugText = document.getElementById("debugText");
             log("init");
+            newValue = {};
             webApp = window.Telegram.WebApp;
             if (webApp != null) {
                 webApp.expand();
@@ -69,22 +71,18 @@
 
         function updateContact() {
             log("updateContact");
-            var fileString = getUserpicFileString();
-            var newValue = {
-                displayName: document.getElementById("displayName").value,
-                shortRemark: document.getElementById("shortRemark").value,
-                firstName: document.getElementById("firstName").value,
-                lastName: document.getElementById("lastName").value,
-                gender: document.getElementById("gender").value,
-                dateOfBirth: document.getElementById("dateOfBirth").value,
-                placeOfBirth: document.getElementById("placeOfBirth").value,
-                nationality: document.getElementById("nationality").value,
-                occupation: document.getElementById("occupation").value,
-                company: document.getElementById("company").value,
-                workStatus: document.getElementById("workStatus").value,
-                description: document.getElementById("description").value,
-                userpic: fileString.slice(0, 64)
-            };
+            newValue.displayName = document.getElementById("displayName").value;
+            newValue.shortRemark = document.getElementById("shortRemark").value,
+            newValue.firstName = document.getElementById("firstName").value;
+            newValue.lastName = document.getElementById("lastName").value;
+            newValue.gender = document.getElementById("gender").value;
+            newValue.dateOfBirth = document.getElementById("dateOfBirth").value;
+            newValue.placeOfBirth = document.getElementById("placeOfBirth").value;
+            newValue.nationality = document.getElementById("nationality").value;
+            newValue.occupation = document.getElementById("occupation").value;
+            newValue.company = document.getElementById("company").value;
+            newValue.workStatus = document.getElementById("workStatus").value;
+            newValue.description = document.getElementById("description").value;
             try {
                 var jsonString = JSON.stringify(newValue);
                 log(jsonString);
@@ -112,43 +110,23 @@
 
         function onUserpicSelected() {
             log("onUserpicSelected");
-            var fileString = getUserpicFileString();
-            log("onUserpicSelected: " + fileString.slice(0, 64) + "...");
+            prepareUserpicFileString();
         }
 
-        function getUserpicFileString() {
+        function prepareUserpicFileString() {
             var userpicInput = document.getElementById("userpic");
             const file = userpicInput.files[0];
-            const fileString = getBase64(file);
-            log("getUserpicFileString: " + fileString.slice(0, 64) + "...");
-            return(fileString);
-        }
-
-        function getBase64(file) {
             var reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function () {
                 var result = reader.result;
                 log("getBase64: " + result.slice(0, 64) + "...");
-                return result;
+                newValue.userpic = result;
             };
             reader.onerror = function (error) {
                 log('Error: ' + error);
-                return "";
+                newValue.userpic = "";
             };
-        }
-
-
-        function readFileIntoMemory(file, callback) {
-            var reader = new FileReader();
-            reader.onload = function() {
-                callback({
-                    name: file.name,
-                    size: file.size,
-                    type: file.type,
-                    content: new Uint8Array(this.result)
-                });
-            }
         }
 
       //
