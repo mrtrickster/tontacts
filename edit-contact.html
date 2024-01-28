@@ -99,14 +99,14 @@
         function onUserpicSelected() {
             //alert("userpic file selected");
             var fileString = getUserpicFileString();
-            alert("onUserpicSelected: " + getUserpicFileString());
+            alert("onUserpicSelected: " + fileString.slice(0, 64) + "...");
         }
 
         function getUserpicFileString() {
             var userpicInput = document.getElementById("userpic");
             const file = userpicInput.files[0];
             const fileString = getBase64(file);
-            alert("getUserpicFileString: " + result);
+            alert("getUserpicFileString: " + fileString.slice(0, 64) + "...");
             return(fileString);
         }
 
@@ -115,7 +115,7 @@
             reader.readAsDataURL(file);
             reader.onload = function () {
                 var result = reader.result;
-                alert("getBase64: " + result);
+                alert("getBase64: " + result.slice(0, 64) + "...");
                 return result;
             };
             reader.onerror = function (error) {
