@@ -78,7 +78,7 @@
                 description: document.getElementById("description").value,
                 userpic: getUserpicFileString()
             };
-            webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), showContactsListScreen());
+            webApp.CloudStorage.setItem(contactKey, JSON.stringify(newValue), onItemSet);
         }
 
         function onItemSet(error, stored) {
