@@ -66,9 +66,9 @@
             clone.style.display = 'block';
             source.style.display = 'none';
             clone.getElementsByClassName('username')[0].innerHTML = item.firstName + " " + item.lastName;
-            if (item.userpic != undefined) {
+            if (item.userpic != undefined && item.userpic != null && item.userpic != "") {
                 //alert(item.userpic);
-                //clone.getElementsByClassName('userpic')[0].src = item.userpic;
+                clone.getElementsByClassName('userpic')[0].src = item.userpic;
             }
             clone.onclick = function() {
                 log("item with key " + item.key + " pressed");
