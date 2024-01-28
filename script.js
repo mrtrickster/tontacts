@@ -2,6 +2,8 @@ const gendersList = { "": "", "m": "Male", "f": "Female", "x": "Other" };
 const countriesList = { "": "", "ru": "Russia", "th": "Thailand", "us": "USA", "ua": "Ukraine" };
 const nationalitiesList = { "": "", "ru": "Russian", "th": "Thai", "us": "US", "ua": "Ukrainian" };
 
+var debugText;
+
 function showContactsListScreen() {
     window.open("contacts-list.html", "_self");
 }
@@ -23,6 +25,9 @@ function showEditContactScreen(key) {
 function log(message) {
     console.log(message);
     //alert(message);
+    if (debugText) {
+        debugText.innerHTML += message + "\n";
+    }
     //debugText.text += message + "\n";
 }
 
