@@ -10,6 +10,7 @@
     <script>
         function init() {
             debugText = document.getElementById("debugText");
+            log(version);
             webApp = window.Telegram.WebApp;
             if (webApp != null) {
                 webApp.expand();

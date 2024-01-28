@@ -1,3 +1,5 @@
+const version = "0.1.1";
+
 const gendersList = { "": "", "m": "Male", "f": "Female", "x": "Other" };
 const countriesList = { "": "", "ru": "Russia", "th": "Thailand", "us": "USA", "ua": "Ukraine" };
 const nationalitiesList = { "": "", "ru": "Russian", "th": "Thai", "us": "US", "ua": "Ukrainian" };
