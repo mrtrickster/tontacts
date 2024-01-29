@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     
     <script>
+
+        var allKeys;
+
         function init() {
+            setWindowClickHandler();
             debugText = document.getElementById("debugText");
             log(version);
             webApp = window.Telegram.WebApp;
@@ -26,6 +30,7 @@
         function onStoredKeys(error, keys) {
             if (!error) {
                 log("stored " + keys.length + " keys");
+                allKeys = keys;
                 if (keys.length == 0) {
                     log("no keys found, it's time to create first contact - yourself!");
                     showNewContactScreen(true);
@@ -76,6 +81,34 @@
                 showViewContactScreen(item.key);
             }
         }
+
+        function setWindowClickHandler() {
+            window.onclick = function(event) {
+                if (!event.target.matches('.menu-button')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        }
+
+        function openMenu() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function removeAllContacts() {
+            if (allKeys) {
+                let text = "Are you sure you want to delete all contacts?";
+                if (confirm(text) == true) {
+                    webApp.CloudStorage.removeItems(allKeys, showContactsListScreen);
+                }
+            }
+        }
     </script>
 
   </head>
@@ -84,7 +117,12 @@
     <div id="header" class="horizontal-block">
       <button class="back-button">←</button>
       <div class="title-label">Your Contacts</div>
-      <button class="menu-button">≡</button>
+      <button class="menu-button" onclick="openMenu()">≡</button>
+      <div id="menu-dropdown" class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
     </div>
     
     <div id="contactsListScreen" class="contactsListScreen switchableDiv">
