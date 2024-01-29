@@ -62,6 +62,7 @@
             document.getElementById("company").value = item.company;
             document.getElementById("workStatus").value = item.workStatus;
             document.getElementById("description").value = item.description;
+            document.getElementById("userpicImg").src = item.userpic;
         }
 
         function viewContact() {
@@ -123,6 +124,8 @@
                 log("loaded image: " + result.length + " bytes");
                 if (result.length > 3072) {
                     img.addEventListener('load', onUserpicLoaded);
+                } else {
+                    newValue.userpic = result;
                 }
                 img.src = result;
             };
@@ -143,7 +146,7 @@
 
             // Draw image and export to a data-uri
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            const dataURI = canvas.toDataURL("image/jpeg", 1);
+            const dataURI = canvas.toDataURL("image/jpeg", 0.6);
             log("drawn image: " + dataURI.length + " bytes");
             log(dataURI.slice(0, 64) + "...");
             img.removeEventListener('load', onUserpicLoaded);
