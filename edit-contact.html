@@ -121,9 +121,9 @@
             var ctx = canvas.getContext("2d");
             var img = document.getElementById("userpicImg");
 
+            /*
             canvas.width = 40;
             canvas.height = 40;
-
             var oc = document.createElement('canvas');
             var octx = oc.getContext('2d');
             oc.width = 40;
@@ -131,12 +131,14 @@
             octx.drawImage(img, 0, 0, canvas.width, canvas.height);
             //octx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5);
             ctx.drawImage(oc, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+            */
 
             var reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function () {
                 var result = reader.result;
                 log("getBase64: " + result.slice(0, 64) + "...");
+                img.src = result;
                 newValue.userpic = result;
             };
             reader.onerror = function (error) {
