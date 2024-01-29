@@ -23,31 +23,11 @@
                 const urlParams = new URLSearchParams(queryString);
                 contactKey = urlParams.get('key');
                 if (contactKey) {
-                    //setUserpicResizer();
                     getContact();
                 } else {
                     log("no contact key provided");
                 }
             }
-        }
-
-        function setUserpicResizer() {
-            const img = document.getElementById("userpicImg");
-            img.addEventListener('load', () => {
-                log("userpic image loaded");
-                const canvas = document.createElement("canvas");
-                const ctx = canvas.getContext("2d");
-
-                // Set width and height
-                canvas.width = 40;
-                canvas.height = 40;
-
-                // Draw image and export to a data-uri
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                const dataURI = canvas.toDataURL();
-                log("drawn image: " + dataURI);
-                img.src = dataURI;
-            });
         }
 
         function getContact() {
@@ -140,7 +120,7 @@
             reader.onload = function () {
                 var result = reader.result;
                 log("loaded image: " + result.length + " bytes");
-                if (result.length > 4096) {
+                if (result.length > 3072) {
                     img.addEventListener('load', onUserpicLoaded);
                 }
                 img.src = result;
@@ -148,8 +128,6 @@
             reader.onerror = function (error) {
                 log('Error: ' + error);
             };
-
-            //prepareUserpicFileString();
         }
 
         function onUserpicLoaded() {
@@ -169,40 +147,7 @@
             log(dataURI.slice(0, 64) + "...");
             img.removeEventListener('load', onUserpicLoaded);
             img.src = dataURI;
-        }
-
-        function prepareUserpicFileString() {
-            var userpicInput = document.getElementById("userpic");
-            const file = userpicInput.files[0];
-
-            var canvas = document.getElementById("userpicCanvas");
-            var ctx = canvas.getContext("2d");
-            var img = document.getElementById("userpicImg");
-
-            /*
-            canvas.width = 40;
-            canvas.height = 40;
-            var oc = document.createElement('canvas');
-            var octx = oc.getContext('2d');
-            oc.width = 40;
-            oc.height = 40;
-            octx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            //octx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5);
-            ctx.drawImage(oc, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
-            */
-
-            var reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function () {
-                var result = reader.result;
-                log("getBase64: " + result.slice(0, 64) + "...");
-                img.src = result;
-                newValue.userpic = result;
-            };
-            reader.onerror = function (error) {
-                log('Error: ' + error);
-                newValue.userpic = "";
-            };
+            newValue.userpic = dataURI;
         }
 
       //
