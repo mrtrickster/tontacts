@@ -139,7 +139,7 @@
             reader.readAsDataURL(file);
             reader.onload = function () {
                 var result = reader.result;
-                log("getBase64: " + result.length + " bytes");
+                log("loaded image: " + result.length + " bytes");
                 img.src = result;
 
                 
@@ -153,8 +153,8 @@
                 // Draw image and export to a data-uri
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                 const dataURI = canvas.toDataURL();
-                log("drawn image: " + dataURI);
-                img.src = dataURI;
+                log("drawn image: " + dataURI.length + " bytes");
+                //img.src = dataURI;
 
 
             };
