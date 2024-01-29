@@ -44,19 +44,19 @@
 
         function fillData(value) {
             var item = JSON.parse(value);
-            document.getElementById("displayName").innerHTML = item.displayName;
-            document.getElementById("shortRemark").innerHTML = item.shortRemark;
-            document.getElementById("firstName").innerHTML = item.firstName;
-            document.getElementById("lastName").innerHTML = item.lastName;
+            document.getElementById("displayName").innerHTML = item.displayName || "";
+            document.getElementById("shortRemark").innerHTML = item.shortRemark || "";
+            document.getElementById("firstName").innerHTML = item.firstName || "";
+            document.getElementById("lastName").innerHTML = item.lastName || "";
             document.getElementById("gender").innerHTML = gendersList[item.gender];
-            document.getElementById("dateOfBirth").innerHTML = item.dateOfBirth;
+            document.getElementById("dateOfBirth").innerHTML = item.dateOfBirth || "";
             document.getElementById("placeOfBirth").innerHTML = countriesList[item.placeOfBirth];
             document.getElementById("nationality").innerHTML = nationalitiesList[item.nationality];
-            document.getElementById("occupation").innerHTML = item.occupation;
-            document.getElementById("company").innerHTML = item.company;
+            document.getElementById("occupation").innerHTML = item.occupation || "";
+            document.getElementById("company").innerHTML = item.company || "";
             document.getElementById("workStatus").value = item.workStatus;
-            document.getElementById("description").innerHTML = item.description;
-            document.getElementById("userpicImg").src = item.userpic;
+            document.getElementById("description").innerHTML = item.description || "";
+            document.getElementById("userpicImg").src = item.userpic || "";
         }
 
         function editContact() {
