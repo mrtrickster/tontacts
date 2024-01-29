@@ -98,6 +98,7 @@
                 log(error);
             } else {
                 log("item was set: " + stored);
+                showViewContactScreen(contactKey);
             }
         }
 
@@ -142,7 +143,7 @@
 
             // Draw image and export to a data-uri
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            const dataURI = canvas.toDataURL("image/jpeg");
+            const dataURI = canvas.toDataURL("image/jpeg", 1);
             log("drawn image: " + dataURI.length + " bytes");
             log(dataURI.slice(0, 64) + "...");
             img.removeEventListener('load', onUserpicLoaded);
