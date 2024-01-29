@@ -152,7 +152,7 @@
 
                 // Draw image and export to a data-uri
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                const dataURI = canvas.toDataURL();
+                const dataURI = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
                 log("drawn image: " + dataURI.length + " bytes");
                 //img.src = dataURI;
 
