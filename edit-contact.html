@@ -141,22 +141,7 @@
                 var result = reader.result;
                 log("loaded image: " + result.length + " bytes");
                 if (result.length > 4096) {
-                    img.addEventListener('load', () => {
-                        log("userpic image loaded");
-                        const canvas = document.createElement("canvas");
-                        const ctx = canvas.getContext("2d");
-
-                        // Set width and height
-                        canvas.width = 40;
-                        canvas.height = 40;
-
-                        // Draw image and export to a data-uri
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                        const dataURI = canvas.toDataURL("image/jpeg");
-                        log("drawn image: " + dataURI.length + " bytes");
-                        log(dataURI.slice(0, 64) + "...");
-                        img.src = dataURI;
-                    });
+                    img.addEventListener('load', onUserpicLoaded);
                 }
                 img.src = result;
             };
@@ -165,6 +150,25 @@
             };
 
             //prepareUserpicFileString();
+        }
+
+        function onUserpicLoaded() {
+            log("userpic image loaded");
+            const img = document.getElementById("userpicImg");
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+
+            // Set width and height
+            canvas.width = 40;
+            canvas.height = 40;
+
+            // Draw image and export to a data-uri
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            const dataURI = canvas.toDataURL("image/jpeg");
+            log("drawn image: " + dataURI.length + " bytes");
+            log(dataURI.slice(0, 64) + "...");
+            img.removeEventListener('load', onUserpicLoaded);
+            img.src = dataURI;
         }
 
         function prepareUserpicFileString() {
