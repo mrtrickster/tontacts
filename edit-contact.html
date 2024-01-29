@@ -116,6 +116,21 @@
         function prepareUserpicFileString() {
             var userpicInput = document.getElementById("userpic");
             const file = userpicInput.files[0];
+
+            var canvas = document.getElementById("userpicCanvas");
+            var ctx = canvas.getContext("2d");
+            var img = document.getElementById("userpicImg");
+
+            canvas.height = canvas.width * (img.height / img.width);
+
+            var oc = document.createElement('canvas');
+            var octx = oc.getContext('2d');
+            oc.width = 40;
+            oc.height = 40;
+            octx.drawImage(img, 0, 0, 40, 40);
+            octx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5);
+            ctx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5, 0, 0, canvas.width, canvas.height);
+
             var reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function () {
@@ -145,11 +160,12 @@
       <div class="Frame18" style="width: 100%; padding-top: 8px; padding-bottom: 8px; background: white; border-radius: 8px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
         <div class="DisplaySettings horizontal-container">
           <div class="userpicBlock" style="width:30%; justify-content: flex-start; align-items: flex-start; display: flex">
-            <div class="userpicDiv" style="width: 48px; height: 48px; background: #D9D9D9; border-radius: 4px"></div>
+            <img id="userpicImg" class="userpicImg" style="width: 40px; height: 40px; background: #D9D9D9; border-radius: 4px"/>
             <div class="userpicControl" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
               <div class="label">Userpic:</div>
               <input type="button" id="loadFileBtn" value="loadFile" onclick="document.getElementById('userpic').click();" />
               <input type="file" id="userpic" name="userpic" accept="image/jpeg" style="display: none;" onchange="onUserpicSelected()" />
+              <canvas id="userpicCanvas" width=40></canvas>
             </div>
           </div>
           <div class="displayNameBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
