@@ -1,4 +1,4 @@
-const version = "0.1.26";
+const version = "0.1.27";
 
 const gendersList = { "": "", "m": "Male", "f": "Female", "x": "Other" };
 const countriesList = { "": "", "ru": "Russia", "th": "Thailand", "us": "USA", "ua": "Ukraine" };
