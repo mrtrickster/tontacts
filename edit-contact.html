@@ -139,6 +139,16 @@
                 var result = reader.result;
                 log("getBase64: " + result.slice(0, 64) + "...");
                 img.src = result;
+                //
+                var oc = document.createElement('canvas');
+                var octx = oc.getContext('2d');
+                oc.width = 40;
+                oc.height = 40;
+                octx.drawImage(img, 0, 0, 40, 40);
+                ctx.drawImage(oc, 0, 0, 40, 40, 0, 0, 40, 40);
+
+
+
                 newValue.userpic = result;
             };
             reader.onerror = function (error) {
