@@ -23,7 +23,7 @@
                 const urlParams = new URLSearchParams(queryString);
                 contactKey = urlParams.get('key');
                 if (contactKey) {
-                    setUserpicResizer();
+                    //setUserpicResizer();
                     getContact();
                 } else {
                     log("no contact key provided");
@@ -130,6 +130,37 @@
 
         function onUserpicSelected() {
             log("onUserpicSelected");
+            
+            var userpicInput = document.getElementById("userpic");
+            const file = userpicInput.files[0];
+            var img = document.getElementById("userpicImg");
+            
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                var result = reader.result;
+                log("getBase64: " + result.length + " bytes");
+                img.src = result;
+
+                
+                const canvas = document.createElement("canvas");
+                const ctx = canvas.getContext("2d");
+
+                // Set width and height
+                canvas.width = 40;
+                canvas.height = 40;
+
+                // Draw image and export to a data-uri
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                const dataURI = canvas.toDataURL();
+                log("drawn image: " + dataURI);
+                img.src = dataURI;
+
+
+            };
+            reader.onerror = function (error) {
+                log('Error: ' + error);
+            };
 
             //prepareUserpicFileString();
         }
