@@ -3,6 +3,7 @@ const version = "0.1.51";
 const gendersList = { "": "", "m": "Male", "f": "Female", "x": "Other" };
 const countriesList = { "": "", "ru": "Russia", "th": "Thailand", "us": "USA", "ua": "Ukraine" };
 const nationalitiesList = { "": "", "ru": "Russian", "th": "Thai", "us": "US", "ua": "Ukrainian" };
+const workStatusesList = { "": "", "0": "Unknown", "1": "Active", "2": "Vacation", "3": "Sick leave" };
 
 var debugText;
 
