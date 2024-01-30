@@ -69,6 +69,8 @@ body {
   height: 40px;
   background-color: #8A5B1E;
   border-radius: 8px;
+  border-width: 0px;
+  font-size: 20px;
   color: #FAFBF4;
   padding: 16px;
 }
