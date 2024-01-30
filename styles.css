@@ -41,17 +41,27 @@ body {
   overflow-y: auto;
 }
 
-.bottom-block {
+.bottom-container {
+  background-color: #97ac26;
+}
+
+.horizontal-container {
   width: 100%;
+  align-self: stretch;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  gap: 2.5%;
+}
+
+.bottom-block {
+  width: 95%;
   height: 72px;
   align-self: stretch;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   display: inline-flex;
-  gap: 2.5%;
-  background-color: #97ac26;
-  padding-top: 16px;
 }
 
 .primary-button {
@@ -60,6 +70,7 @@ body {
   background-color: #8A5B1E;
   border-radius: 8px;
   color: #FAFBF4;
+  padding: 16px;
 }
 
 .grid {
@@ -122,15 +133,6 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-y: auto;
-}
-
-.horizontal-container {
-  width: 100%;
-  align-self: stretch;
-  justify-content: center;
-  align-items: center;
-  display: inline-flex;
-  gap: 2.5%;
 }
 
 .label {
