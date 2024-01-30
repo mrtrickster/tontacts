@@ -116,7 +116,7 @@ body {
 .editContactScreen {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 72px);
+  min-height: calc(100vh - 144px);
   background-color: #97ac26;
   margin: 0px;
   padding: 0px;
