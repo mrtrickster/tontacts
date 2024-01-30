@@ -178,19 +178,23 @@
             <div class="data-block">
                 <img id="userpicImg" class="userpicImg" style="width: 40px; height: 40px; background: #D9D9D9; border-radius: 4px"/>
                 <div class="userpicControl" style="flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
-                <div class="label">Userpic:</div>
-                <input type="button" id="loadFileBtn" value="File" onclick="document.getElementById('userpic').click();" />
-                <input type="file" id="userpic" name="userpic" accept="image/jpeg" style="display: none;" onchange="onUserpicSelected()" />
+                    <div class="label">Userpic:</div>
+                    <input type="button" id="loadFileBtn" value="File" onclick="document.getElementById('userpic').click();" />
+                    <input type="file" id="userpic" name="userpic" accept="image/jpeg" style="display: none;" onchange="onUserpicSelected()" />
                 </div>
-          </div>
-          <div class="data-block">
-            <div class="label">Display name: </div>
-            <input type="text" id="displayName" name="displayName" style="width: 100%;" placeholder="Enter display name...">
-          </div>
-          <div class="data-block">
-            <div class="label">Short remark: </div>
-            <input type="text" id="shortRemark" name="shortRemark" style="width: 100%;" placeholder="Enter short remark...">
-          </div>
+            </div>
+            <div class="data-block">
+                <div class="label">Display name: </div>
+                <div class="content">
+                    <input type="text" id="displayName" name="displayName" style="width: 100%;" placeholder="Enter display name...">
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="label">Short remark: </div>
+                <div class="content">
+                    <input type="text" id="shortRemark" name="shortRemark" style="width: 100%;" placeholder="Enter short remark...">
+                </div>
+            </div>
         </div>
         <div class="BasicPersonalData horizontal-container">
             <div class="data-block">
