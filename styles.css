@@ -53,10 +53,11 @@ body {
   display: inline-flex;
   gap: 2.5%;
   padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 
 .bottom-block {
-  width: 95%;
+  width: 100%;
   height: 72px;
   align-self: stretch;
   justify-content: center;
