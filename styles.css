@@ -52,6 +52,7 @@ body {
   align-items: left;
   display: inline-flex;
   gap: 2.5%;
+  padding-left: 2.5%;
 }
 
 .bottom-block {
