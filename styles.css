@@ -139,10 +139,6 @@ body {
 .data-block {
   width:30%;
   height: 60px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-  gap: 4px;
 }
 
 .data-block .label {
