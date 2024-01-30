@@ -48,8 +48,8 @@ body {
 .horizontal-container {
   width: 100%;
   align-self: stretch;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   display: inline-flex;
   gap: 2.5%;
 }
