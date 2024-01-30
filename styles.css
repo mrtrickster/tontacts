@@ -47,6 +47,7 @@ body {
   align-self: stretch;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
   display: inline-flex;
   gap: 2.5%;
   background-color: #97ac26;
@@ -83,7 +84,6 @@ body {
 
 .back-button:hover,
 .menu-button:hover,
-.primary-button:hover,
 .card:hover {
     transform: scale(1.05);
 }
@@ -139,6 +139,10 @@ body {
   font-family: Inter;
   font-weight: 400;
   word-wrap: break-word;
+}
+
+.debugDiv {
+  display: none;
 }
 
 .debugText {

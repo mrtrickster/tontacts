@@ -279,19 +279,20 @@
             <input type="text" id="description" name="description" style="width: 100%;" placeholder="Enter any text there...">
           </div>
         </div>
-        <div class="Frame2 horizontal-container">
-          <div class="block1" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="viewContact()">Cancel</button>
-          </div>
-          <div class="block2" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="updateContact()">Save</button>
-          </div>
-          <div class="block3" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
-            <button style="width: 100%;" onclick="deleteContact()">Delete</button>
-          </div>
-        </div>
       </div>
     </div>
+    
+    <div class="horizontal-container">
+        <div class="block1" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+          <button class="primary-button" onclick="viewContact()">Cancel</button>
+        </div>
+        <div class="block2" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+          <button class="primary-button" onclick="updateContact()">Save</button>
+        </div>
+        <div class="block3" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+          <button class="primary-button" onclick="deleteContact()">Delete</button>
+        </div>
+      </div>
 
     <div id="debugDiv" style="position: absolute; width: 100%; height: 100%; margin: 0px; padding: 0px;">
         <p id="debugText" class="debugText"></p>
