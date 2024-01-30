@@ -136,7 +136,7 @@ body {
   overflow-y: auto;
 }
 
-.dataBlock {
+.data-block {
   width:30%;
   height: 60px;
   justify-content: flex-start;
