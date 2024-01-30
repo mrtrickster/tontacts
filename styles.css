@@ -34,7 +34,7 @@ body {
 .contactsListScreen {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 72px);
+  height: calc(100vh - 112px);
   background-color: #999;
   margin: 0px;
   padding: 0px;
