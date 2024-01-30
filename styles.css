@@ -155,6 +155,18 @@ body {
   width: 100%;
 }
 
+.data-block .content input {
+  width: 100%;
+}
+
+.data-block .content button {
+  width: 100%;
+}
+
+.data-block .content select {
+  width: 100%;
+}
+
 .debugDiv {
   display: none;
 }
