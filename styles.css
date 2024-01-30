@@ -158,16 +158,19 @@ body {
 .data-block .content input {
   width: 100%;
   margin: 0px;
+  box-sizing: border-box; 
 }
 
 .data-block .content button {
   width: 100%;
   margin: 0px;
+  box-sizing: border-box; 
 }
 
 .data-block .content select {
   width: 100%;
   margin: 0px;
+  box-sizing: border-box; 
 }
 
 .debugDiv {
