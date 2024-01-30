@@ -61,6 +61,9 @@
             assignValue(item, "occupation");
             assignValue(item, "company");
             assignValue(item, "workStatus");
+            assignValue(item, "primaryPhone");
+            assignValue(item, "primaryEmail");
+            assignValue(item, "telegramAccount");
             assignValue(item, "description");
             document.getElementById("userpicImg").src = item.userpic;
         }
@@ -83,6 +86,9 @@
             newValue.occupation = document.getElementById("occupation").value;
             newValue.company = document.getElementById("company").value;
             newValue.workStatus = document.getElementById("workStatus").value;
+            newValue.primaryPhone = document.getElementById("primaryPhone").value;
+            newValue.primaryEmail = document.getElementById("primaryEmail").value;
+            newValue.telegramAccount = document.getElementById("telegramAccount").value;
             newValue.description = document.getElementById("description").value;
             try {
                 var jsonString = JSON.stringify(newValue);
@@ -251,6 +257,22 @@
             </select>
           </div>
         </div>
+
+        <div class="ContactsData horizontal-container">
+            <div class="primaryPhoneBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+                <div class="label">Primary phone: </div>
+                <input type="text" id="primaryPhone" name="primaryPhone" style="width: 100%;" placeholder="Enter primary phone...">
+            </div>
+            <div class="primaryEmailBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+                <div class="label">Primary e-mail: </div>
+                <input type="text" id="primaryEmail" name="primaryEmail" style="width: 100%;" placeholder="Enter primary e-mail...">
+            </div>
+            <div class="telegramAccountBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+                <div class="label">Telegram account: </div>
+                <input type="text" id="telegramAccount" name="telegramAccount" style="width: 100%;" placeholder="Enter telegram account...">
+            </div>
+        </div>
+
         <div class="Description horizontal-container">
           <div class="descriptionBlock" style="width: 95%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Description:</div>

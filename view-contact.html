@@ -55,6 +55,9 @@
             assignInnerHTML(item, "occupation");
             assignInnerHTML(item, "company");
             document.getElementById("workStatus").value = item.workStatus;
+            assignInnerHTML(item, "primaryPhone");
+            assignInnerHTML(item, "primaryEmail");
+            assignInnerHTML(item, "telegramAccount");
             assignInnerHTML(item, "description");
             document.getElementById("userpicImg").src = item.userpic;
         }
@@ -142,6 +145,22 @@
             </select>
           </div>
         </div>
+
+        <div class="ContactsData horizontal-container">
+            <div class="primaryPhoneBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+                <div class="label">Primary phone: </div>
+                <p id="primaryPhone" style="width: 100%;"></p>
+            </div>
+            <div class="primaryEmailBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+                <div class="label">Primary e-mail: </div>
+                <p id="primaryEmail" style="width: 100%;"></p>
+            </div>
+            <div class="telegramAccountBlock" style="width: 30%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
+                <div class="label">Telegram account: </div>
+                <p id="telegramAccount" style="width: 100%;"></p>
+            </div>
+        </div>
+
         <div class="Description horizontal-container">
           <div class="descriptionBlock" style="width: 95%; flex-direction: column; justify-content: center; align-items: flex-start; display: inline-flex">
             <div class="label">Description:</div>
