@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 112px);
-  background-color: #999;
+  background-color: #97ac26;
   margin: 0px;
   padding: 0px;
   overflow-y: auto;
@@ -55,11 +55,10 @@ body {
   margin: 0px;
   padding: 16px;
   justify-content: center;
-  background-color: #aaa;
 }
 
 .card {
-  background-color: #fff;
+  background-color: #FAFBF4;
   border: 0px solid;
   border-radius: 8px;
   margin: 0px;
