@@ -70,7 +70,7 @@ body {
   background-color: #8A5B1E;
   border-radius: 8px;
   border-width: 0px;
-  font-size: 18px;
+  font-size: 16px;
   color: #FAFBF4;
 }
 
@@ -134,6 +134,15 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-y: auto;
+}
+
+.dataBlock {
+  width:30%;
+  height: 60px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  gap: 4px;
 }
 
 .label {
