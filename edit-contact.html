@@ -49,20 +49,19 @@
         }
 
         function fillData(value) {
-            log("fillData: " + value);
             var item = JSON.parse(value);
-            document.getElementById("displayName").value = item.displayName;
-            document.getElementById("shortRemark").value = item.shortRemark;
-            document.getElementById("firstName").value = item.firstName;
-            document.getElementById("lastName").value = item.lastName;
-            document.getElementById("gender").value = item.gender;
-            document.getElementById("dateOfBirth").value = item.dateOfBirth;
-            document.getElementById("placeOfBirth").value = item.placeOfBirth;
-            document.getElementById("nationality").value = item.nationality;
-            document.getElementById("occupation").value = item.occupation;
-            document.getElementById("company").value = item.company;
-            document.getElementById("workStatus").value = item.workStatus;
-            document.getElementById("description").value = item.description;
+            assignValue(item, "displayName");
+            assignValue(item, "shortRemark");
+            assignValue(item, "firstName");
+            assignValue(item, "lastName");
+            assignValue(item, "gender");
+            assignValue(item, "dateOfBirth");
+            assignValue(item, "placeOfBirth");
+            assignValue(item, "nationality");
+            assignValue(item, "occupation");
+            assignValue(item, "company");
+            assignValue(item, "workStatus");
+            assignValue(item, "description");
             document.getElementById("userpicImg").src = item.userpic;
         }
 
@@ -162,7 +161,7 @@
   <body onload="init()">
 
     <div id="header" class="horizontal-block">
-      <button class="back-button">←</button>
+      <button class="back-button" onclick="viewContact()">←</button>
       <div class="title-label">Edit Contact</div>
       <button class="menu-button">≡</button>
     </div>

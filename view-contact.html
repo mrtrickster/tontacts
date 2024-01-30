@@ -50,25 +50,13 @@
             assignInnerHTML(item, "lastName");
             document.getElementById("gender").innerHTML = gendersList[item.gender];
             assignInnerHTML(item, "dateOfBirth");
-            assignInnerHTML(item, "occupation");
-            assignInnerHTML(item, "company");
-            assignInnerHTML(item, "description");
-            //document.getElementById("displayName").innerHTML = item.displayName;
-            //document.getElementById("shortRemark").innerHTML = item.shortRemark;
-            //document.getElementById("firstName").innerHTML = item.firstName;
-            //document.getElementById("lastName").innerHTML = item.lastName;
-            //document.getElementById("dateOfBirth").innerHTML = item.dateOfBirth;
             document.getElementById("placeOfBirth").innerHTML = countriesList[item.placeOfBirth];
             document.getElementById("nationality").innerHTML = nationalitiesList[item.nationality];
-            //document.getElementById("occupation").innerHTML = item.occupation;
-            //document.getElementById("company").innerHTML = item.company;
+            assignInnerHTML(item, "occupation");
+            assignInnerHTML(item, "company");
             document.getElementById("workStatus").value = item.workStatus;
-            //document.getElementById("description").innerHTML = item.description;
+            assignInnerHTML(item, "description");
             document.getElementById("userpicImg").src = item.userpic;
-        }
-
-        function assignInnerHTML(item, key) {
-            document.getElementById(key).innerHTML = item[key] !== undefined ? item[key] : "";
         }
 
         function editContact() {
@@ -86,7 +74,7 @@
   <body onload="init()">
 
     <div id="header" class="horizontal-block">
-      <button class="back-button">←</button>
+      <button class="back-button" onclick="showContactsListScreen()">←</button>
       <div class="title-label">View Contact</div>
       <button class="menu-button">≡</button>
     </div>

@@ -1,4 +1,4 @@
-const version = "0.1.34";
+const version = "0.1.35";
 
 const gendersList = { "": "", "m": "Male", "f": "Female", "x": "Other" };
 const countriesList = { "": "", "ru": "Russia", "th": "Thailand", "us": "USA", "ua": "Ukraine" };
@@ -22,6 +22,14 @@ function showViewContactScreen(key) {
 function showEditContactScreen(key) {
     log("editing contact " + key);
     window.open("edit-contact.html?cache=" + makeId(4) + "&key=" + key, "_self");
+}
+
+function assignInnerHTML(item, key) {
+    document.getElementById(key).innerHTML = item[key] !== undefined ? item[key] : "";
+}
+
+function assignValue(item, key) {
+    document.getElementById(key).value = item[key] !== undefined ? item[key] : "";
 }
 
 function log(message) {
