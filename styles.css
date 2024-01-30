@@ -41,7 +41,7 @@ body {
   overflow-y: auto;
 }
 
-.bottomBlock {
+.bottom-block {
   width: 100%;
   height: 72px;
   align-self: stretch;
