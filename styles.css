@@ -57,6 +57,8 @@ body {
   justify-content: left;
   align-items: center;
   display: inline-flex;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   gap: 2.5%;
 }
 
