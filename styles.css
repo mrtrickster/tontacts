@@ -46,7 +46,7 @@ body {
 }
 
 .horizontal-container {
-  width: 95%;
+  width: 100%;
   align-self: stretch;
   justify-content: center;
   align-items: center;
