@@ -161,6 +161,11 @@ body {
   box-sizing: border-box; 
 }
 
+.data-block .content input ::placeholder {
+  font-size: 10px;
+  font-style: italic;
+}
+
 .data-block .content button {
   width: 100%;
   margin: 0px;
