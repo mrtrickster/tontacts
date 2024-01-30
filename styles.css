@@ -157,14 +157,17 @@ body {
 
 .data-block .content input {
   width: 100%;
+  margin: 0px;
 }
 
 .data-block .content button {
   width: 100%;
+  margin: 0px;
 }
 
 .data-block .content select {
   width: 100%;
+  margin: 0px;
 }
 
 .debugDiv {
