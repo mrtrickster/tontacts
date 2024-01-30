@@ -51,6 +51,7 @@ body {
   display: inline-flex;
   gap: 2.5%;
   background-color: #97ac26;
+  padding-top: 16px;
 }
 
 .primary-button {
