@@ -171,15 +171,21 @@ body {
   box-sizing: border-box; 
 }
 
-.viewContactScreen .data-block .content input {
+.viewContactScreen .data-block .content input,
+.viewContactScreen .data-block .content select,
+.viewContactScreen .data-block .content textarea {
   padding: 0px;
   margin: 0px;
   border-style: none;
   border-width: 0px;
   background-color: transparent;
   color: #FAFBF4;
-  font-size: 10px;
+  font-size: 12px;
   font-family: Inter;
+}
+
+.viewContactScreen .data-block .content input ::placeholder {
+  display: none;
 }
 
 .data-block .content textarea {
