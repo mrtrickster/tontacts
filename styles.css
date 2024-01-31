@@ -171,7 +171,15 @@ body {
   box-sizing: border-box; 
 }
 
-.data-block .content input ::placeholder {
+.data-block .content textarea {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; 
+}
+
+.data-block .content input ::placeholder,
+.data-block .content textarea ::placeholder {
   font-size: 10px;
   font-style: italic;
 }
