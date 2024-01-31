@@ -47,18 +47,18 @@ body {
   width: 100%;
   align-self: stretch;
   align-items: center;
+  box-sizing: border-box;
   display: inline-flex;
   gap: 2.5%;  
 }
 
 .horizontal-container {
-  width: 95%;
+  width: 100%;
   align-self: stretch;
   justify-content: left;
   align-items: center;
+  box-sizing: border-box;
   display: inline-flex;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
   gap: 2.5%;
 }
 
