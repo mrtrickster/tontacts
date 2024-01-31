@@ -59,7 +59,7 @@ body {
   align-items: center;
   box-sizing: border-box;
   display: inline-flex;
-  gap: 2.5%;
+  gap: 2%;
 }
 
 .bottom-block {
@@ -145,7 +145,7 @@ body {
 }
 
 .data-block {
-  width:30%;
+  width:32%;
   height: 48px;
 }
 
