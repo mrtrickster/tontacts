@@ -122,9 +122,6 @@ body {
 .username {
   flex-grow: 1;
   font-size: 12px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin: 0px 2px;
 }
 
