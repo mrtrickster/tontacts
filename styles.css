@@ -102,10 +102,10 @@ body {
   border-radius: 8px;
   color: #fff;
   margin: 0px;
-  padding: 4px;
+  padding: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  width: 160px;
+  width: 152px;
 }
 
 .back-button:hover,
