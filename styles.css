@@ -35,14 +35,14 @@ body {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 144px);
-  background-color: #97ac26;
+  background-color: #f4b346;
   margin: 0px;
   padding: 0px;
   overflow-y: auto;
 }
 
 .bottom-container {
-  background-color: #97ac26;
+  background-color: #f4b346;
   justify-content: center;
   width: 100%;
   align-self: stretch;
@@ -140,7 +140,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 144px);
-  background-color: #97ac26;
+  background-color: #f4b346;
   margin: 0px;
   padding: 0px;
   overflow-y: auto;
