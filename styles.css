@@ -89,8 +89,8 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 108px);
-  gap: 4px;
+  grid-template-columns: repeat(auto-fit, 166px);
+  gap: 10px;
   margin: 0px;
   padding: 16px;
   justify-content: center;
@@ -105,7 +105,7 @@ body {
   padding: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  width: 100px;
+  width: 160px;
 }
 
 .back-button:hover,
