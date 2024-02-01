@@ -120,6 +120,7 @@ body {
 }
 
 .username {
+  border-radius: 20px;
   flex-grow: 1;
   font-size: 12px;
   margin: 0px 2px;
