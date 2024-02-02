@@ -142,7 +142,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 144px);
-  background-color: #f4b346;
+  background-color: #fff;
   margin: 0px;
   padding: 0px;
   overflow-y: auto;
@@ -181,7 +181,7 @@ body {
   border-style: none;
   border-width: 0px;
   background-color: transparent;
-  color: #FAFBF4;
+  color: #2E2C34;
   font-size: 12px;
   font-family: Inter;
 }
